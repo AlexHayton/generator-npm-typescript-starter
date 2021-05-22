@@ -51,7 +51,7 @@
       "^.+\\.ts?$": "ts-jest"
     }
   },
-  "author": "<%= username %>",
+  "author": "<%= fullname %>",
   "license": "<%= license %>",
   "bugs": {
     "url": "https://github.com/<%= username %>/<%= appname %>/issues"

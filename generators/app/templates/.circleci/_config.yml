@@ -60,7 +60,7 @@ jobs:
             mkdir ~/.ssh/
             echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
             git config --global user.email "<%= email %>"
-            git config --global user.name "<%= username %>"
+            git config --global user.name "<%= fullname %>"
             git branch --set-upstream-to master
             npx release-it
 
