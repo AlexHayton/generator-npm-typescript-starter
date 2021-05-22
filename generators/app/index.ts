@@ -10,12 +10,13 @@ const email = require("git-user-email")();
 /* eslint-enable @typescript-eslint/no-var-requires */
 
 interface Answers {
-  name?: string;
   description?: string;
-  username?: string;
-  license?: string;
   email?: string;
+  fullname?: string;
+  license?: string;
+  name?: string;
   releaseit?: boolean;
+  username?: string;
 }
 
 export default class TypescriptGenerator extends Generator {
@@ -83,6 +84,7 @@ export default class TypescriptGenerator extends Generator {
       {
         appname: this.destinationPath().split(path.sep).pop(),
         description: this.answers.description,
+        fullname: this.answers.fullname,
         username: this.answers.username,
         license: this.answers.license,
       }
@@ -130,7 +132,7 @@ export default class TypescriptGenerator extends Generator {
         this.templatePath(".circleci/_config.yml"),
         this.destinationPath(".circleci/config.yml"),
         {
-          username: this.answers.username,
+          fullname: this.answers.fullname,
           email: this.answers.email,
         }
       );

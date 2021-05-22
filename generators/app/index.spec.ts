@@ -40,6 +40,7 @@ describe("generator-typescript-library-starter:app", () => {
     it("replaces prompt values", () => {
       assert.fileContent("LICENSE", fullname);
       assert.fileContent("LICENSE", new Date().getFullYear().toString());
+      assert.fileContent("package.json", fullname);
       assert.fileContent("package.json", username);
       assert.fileContent("package.json", description);
       assert.fileContent("README.md", name);
@@ -66,10 +67,11 @@ describe("generator-typescript-library-starter:app", () => {
     it("replaces prompt values", () => {
       assert.fileContent("LICENSE", fullname);
       assert.fileContent("LICENSE", new Date().getFullYear().toString());
+      assert.fileContent("package.json", fullname);
       assert.fileContent("package.json", username);
       assert.fileContent("package.json", description);
       assert.fileContent("README.md", name);
-      assert.fileContent(".circleci/config.yml", username);
+      assert.fileContent(".circleci/config.yml", fullname);
       assert.fileContent(".circleci/config.yml", email);
     });
   });
